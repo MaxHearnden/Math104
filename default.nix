@@ -9,7 +9,7 @@
   rEnv = pkgs.rWrapper.override {
     packages = [ default ];
   };
-  rStudioEnv = pkgs.rStudioWrapper.override {
+  rstudioEnv = pkgs.rstudioWrapper.override {
     packages = [ default ];
   };
 }
