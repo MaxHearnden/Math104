@@ -3,9 +3,13 @@
     name = "Math104";
     version = "1.0";
     src = ./Math104_1.0.tar.gz;
-    buildInputs = with pkgs.rPackages; [maps mapproj pkgs.R];
+    propogatedBuildInputs = with pkgs.rPackages; [maps mapproj];
+    nativeBuildInputs = with pkgs.rPackages; [maps mapproj pkgs.R];
   };
   rEnv = pkgs.rWrapper.override {
-    packages = with pkgs.rPackages; [ default maps mapproj ];
+    packages = [ default ];
+  };
+  rStudioEnv = pkgs.rStudioWrapper.override {
+    packages = [ default ];
   };
 }
