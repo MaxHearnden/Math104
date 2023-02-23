@@ -6,9 +6,9 @@
     buildInputs = with pkgs.rPackages; [maps mapproj pkgs.R];
   };
   rEnv = pkgs.rWrapper.override {
-    packages = [ default maps mapproj ];
+    packages = with pkgs.rPackages; [ default maps mapproj ];
   };
   rstudioEnv = pkgs.rstudioWrapper.override {
-    packages = [ default maps mapproj ];
+    packages = with pkgs.rPackages; [ default maps mapproj ];
   };
 }
